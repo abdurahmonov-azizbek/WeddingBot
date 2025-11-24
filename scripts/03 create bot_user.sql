@@ -1,0 +1,5 @@
+CREATE TABLE bot_user
+(
+    id BIGINT NOT NULL PRIMARY KEY,
+    lang VARCHAR(5) DEFAULT 'uz'
+)

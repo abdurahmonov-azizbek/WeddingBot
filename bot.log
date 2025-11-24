@@ -1,0 +1,1719 @@
+2025-11-21 01:36:30,128 - logger - INFO - Starting...
+2025-11-21 01:36:30,128 - aiogram.dispatcher - INFO - Start polling
+2025-11-21 01:36:30,767 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:36:39,176 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:36:39,584 - aiogram.event - INFO - Update id=83466861 is handled. Duration 449 ms by bot id=7849606366
+2025-11-21 01:37:08,832 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:37:09,017 - aiogram.event - INFO - Update id=83466862 is handled. Duration 340 ms by bot id=7849606366
+2025-11-21 01:37:20,296 - logger - ERROR - Error fetching guest by reg number Azizbek Abdurahmonov: argument of WHERE must be type boolean, not type character varying
+2025-11-21 01:37:20,298 - aiogram.event - INFO - Update id=83466863 is not handled. Duration 40 ms by bot id=7849606366
+2025-11-21 01:37:20,298 - aiogram.event - ERROR - Cause exception while process update id=83466863 by bot id=7849606366
+AttributeError: module 'services.guest_service' has no attribute 'get_by_full_name'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 63, in enter_reg_number
+    guest = await guest_service.get_by_full_name(reg_number)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'services.guest_service' has no attribute 'get_by_full_name'. Did you mean: 'get_by_name'?
+2025-11-21 01:37:38,873 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-21 01:37:38,874 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-21 01:37:38,874 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-21 01:37:39,041 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:37:42,936 - logger - INFO - Starting...
+2025-11-21 01:37:42,937 - aiogram.dispatcher - INFO - Start polling
+2025-11-21 01:37:43,504 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:37:50,235 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:37:50,685 - aiogram.event - INFO - Update id=83466864 is handled. Duration 486 ms by bot id=7849606366
+2025-11-21 01:37:51,927 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:37:52,110 - aiogram.event - INFO - Update id=83466865 is handled. Duration 223 ms by bot id=7849606366
+2025-11-21 01:37:58,276 - logger - ERROR - Error fetching guest by reg number Azizbek Abdurahmonov: argument of WHERE must be type boolean, not type character varying
+2025-11-21 01:37:58,331 - logger - INFO - Guest with name Azizbek Abdurahmonov not found.
+2025-11-21 01:37:58,545 - aiogram.event - INFO - Update id=83466866 is handled. Duration 418 ms by bot id=7849606366
+2025-11-21 01:38:06,194 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:38:06,370 - aiogram.event - INFO - Update id=83466867 is handled. Duration 213 ms by bot id=7849606366
+2025-11-21 01:38:07,803 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:38:07,985 - aiogram.event - INFO - Update id=83466868 is handled. Duration 221 ms by bot id=7849606366
+2025-11-21 01:38:11,849 - logger - ERROR - Error fetching guest by reg number 3857872: argument of WHERE must be type boolean, not type character varying
+2025-11-21 01:38:11,905 - logger - INFO - Guest with name 3857872 not found.
+2025-11-21 01:38:12,098 - aiogram.event - INFO - Update id=83466869 is handled. Duration 393 ms by bot id=7849606366
+2025-11-21 01:38:38,948 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:38:39,167 - aiogram.event - INFO - Update id=83466870 is handled. Duration 256 ms by bot id=7849606366
+2025-11-21 01:38:40,003 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:38:40,175 - aiogram.event - INFO - Update id=83466871 is handled. Duration 212 ms by bot id=7849606366
+2025-11-21 01:38:41,493 - logger - ERROR - Error fetching guest by reg number 6146775: argument of WHERE must be type boolean, not type character varying
+2025-11-21 01:38:41,550 - logger - INFO - Guest with name 6146775 not found.
+2025-11-21 01:38:41,725 - aiogram.event - INFO - Update id=83466872 is handled. Duration 372 ms by bot id=7849606366
+2025-11-21 01:39:48,120 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-21 01:39:48,121 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-21 01:39:48,121 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-21 01:39:48,380 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:39:51,453 - logger - INFO - Starting...
+2025-11-21 01:39:51,453 - aiogram.dispatcher - INFO - Start polling
+2025-11-21 01:39:51,868 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:39:55,564 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:39:56,010 - aiogram.event - INFO - Update id=83466873 is handled. Duration 489 ms by bot id=7849606366
+2025-11-21 01:39:56,900 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:39:57,058 - aiogram.event - INFO - Update id=83466874 is handled. Duration 196 ms by bot id=7849606366
+2025-11-21 01:40:00,309 - aiogram.event - INFO - Update id=83466875 is not handled. Duration 65 ms by bot id=7849606366
+2025-11-21 01:40:00,310 - aiogram.event - ERROR - Cause exception while process update id=83466875 by bot id=7849606366
+KeyError: 'enter_phone_number'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 72, in enter_reg_number
+    await message.answer(t("enter_phone_number", lang), reply_markup=keyboards.get_contact_keyboard(t("phone_button", lang)))
+                         ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\locales.py", line 82, in t
+    return TEXTS[key].get(lang, TEXTS[key][Lang.RU])
+           ~~~~~^^^^^
+KeyError: 'enter_phone_number'
+2025-11-21 01:40:29,849 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-21 01:40:29,850 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-21 01:40:29,850 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-21 01:40:30,115 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:40:33,909 - logger - INFO - Starting...
+2025-11-21 01:40:33,909 - aiogram.dispatcher - INFO - Start polling
+2025-11-21 01:40:34,324 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-21 01:40:38,863 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:40:39,302 - aiogram.event - INFO - Update id=83466876 is handled. Duration 477 ms by bot id=7849606366
+2025-11-21 01:40:40,116 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-21 01:40:40,402 - aiogram.event - INFO - Update id=83466877 is handled. Duration 324 ms by bot id=7849606366
+2025-11-21 01:40:43,452 - aiogram.event - INFO - Update id=83466878 is handled. Duration 221 ms by bot id=7849606366
+2025-11-21 01:41:08,754 - aiogram.event - INFO - Update id=83466879 is handled. Duration 253 ms by bot id=7849606366
+2025-11-21 01:43:06,253 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-21 01:43:06,254 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-21 01:43:06,254 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-21 01:43:06,507 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:50:34,713 - logger - INFO - Starting...
+2025-11-22 00:50:34,713 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 00:50:35,344 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:50:35,489 - aiogram.event - INFO - Update id=83466881 is not handled. Duration 0 ms by bot id=7849606366
+2025-11-22 00:50:36,019 - aiogram.event - INFO - Update id=83466880 is handled. Duration 530 ms by bot id=7849606366
+2025-11-22 00:52:09,171 - aiogram.event - INFO - Update id=83466882 is handled. Duration 187 ms by bot id=7849606366
+2025-11-22 00:52:10,381 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:10,435 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:10,666 - aiogram.event - INFO - Update id=83466883 is handled. Duration 448 ms by bot id=7849606366
+2025-11-22 00:52:12,657 - aiogram.event - INFO - Update id=83466884 is handled. Duration 182 ms by bot id=7849606366
+2025-11-22 00:52:13,519 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:13,573 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:13,776 - aiogram.event - INFO - Update id=83466885 is handled. Duration 397 ms by bot id=7849606366
+2025-11-22 00:52:15,804 - aiogram.event - INFO - Update id=83466886 is handled. Duration 176 ms by bot id=7849606366
+2025-11-22 00:52:16,583 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:16,639 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:16,841 - aiogram.event - INFO - Update id=83466887 is handled. Duration 295 ms by bot id=7849606366
+2025-11-22 00:52:33,029 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 00:52:33,032 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 00:52:33,032 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 00:52:33,297 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:52:37,094 - logger - INFO - Starting...
+2025-11-22 00:52:37,094 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 00:52:37,568 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:52:38,783 - aiogram.event - INFO - Update id=83466888 is handled. Duration 466 ms by bot id=7849606366
+2025-11-22 00:52:39,639 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:39,680 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:40,034 - aiogram.event - INFO - Update id=83466889 is handled. Duration 549 ms by bot id=7849606366
+2025-11-22 00:52:41,487 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:41,545 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:52:41,926 - aiogram.event - INFO - Update id=83466890 is handled. Duration 477 ms by bot id=7849606366
+2025-11-22 00:52:48,755 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 00:52:48,755 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 00:52:48,756 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 00:52:49,018 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:53:44,452 - logger - INFO - Starting...
+2025-11-22 00:53:44,452 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 00:53:44,913 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:53:47,485 - aiogram.event - INFO - Update id=83466891 is not handled. Duration 0 ms by bot id=7849606366
+2025-11-22 00:53:48,638 - aiogram.event - INFO - Update id=83466892 is handled. Duration 514 ms by bot id=7849606366
+2025-11-22 00:53:49,516 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:53:49,556 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:53:50,327 - aiogram.event - INFO - Update id=83466893 is handled. Duration 852 ms by bot id=7849606366
+2025-11-22 00:53:51,616 - aiogram.event - INFO - Update id=83466894 is handled. Duration 196 ms by bot id=7849606366
+2025-11-22 00:53:52,366 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:53:52,421 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:53:52,890 - aiogram.event - INFO - Update id=83466895 is handled. Duration 663 ms by bot id=7849606366
+2025-11-22 00:53:57,926 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 00:53:57,927 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 00:53:57,927 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 00:53:58,178 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:54:03,697 - logger - INFO - Starting...
+2025-11-22 00:54:03,697 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 00:54:04,111 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 00:54:09,980 - aiogram.event - INFO - Update id=83466896 is handled. Duration 566 ms by bot id=7849606366
+2025-11-22 00:54:10,788 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:54:10,846 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:54:11,325 - aiogram.event - INFO - Update id=83466897 is handled. Duration 576 ms by bot id=7849606366
+2025-11-22 00:54:12,536 - aiogram.event - INFO - Update id=83466898 is handled. Duration 224 ms by bot id=7849606366
+2025-11-22 00:54:13,406 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:54:13,467 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:54:13,937 - aiogram.event - INFO - Update id=83466899 is handled. Duration 569 ms by bot id=7849606366
+2025-11-22 00:54:15,344 - aiogram.event - INFO - Update id=83466900 is handled. Duration 166 ms by bot id=7849606366
+2025-11-22 00:54:16,132 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:54:16,290 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 00:54:16,762 - aiogram.event - INFO - Update id=83466901 is handled. Duration 668 ms by bot id=7849606366
+2025-11-22 00:54:20,047 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 00:54:20,048 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 00:54:20,048 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 00:54:20,313 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:12:11,894 - logger - INFO - Starting...
+2025-11-22 01:12:11,894 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:12:12,423 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:12:23,652 - aiogram.event - INFO - Update id=83466902 is handled. Duration 522 ms by bot id=7849606366
+2025-11-22 01:12:25,219 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 01:12:25,412 - aiogram.event - INFO - Update id=83466903 is handled. Duration 234 ms by bot id=7849606366
+2025-11-22 01:12:37,408 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 01:12:37,587 - aiogram.event - INFO - Update id=83466904 is handled. Duration 233 ms by bot id=7849606366
+2025-11-22 01:12:38,854 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 01:12:39,034 - aiogram.event - INFO - Update id=83466905 is handled. Duration 219 ms by bot id=7849606366
+2025-11-22 01:12:42,534 - logger - INFO - Guest with reg number Azizbek not found.
+2025-11-22 01:12:42,582 - logger - INFO - Guest with name Azizbek not found.
+2025-11-22 01:12:42,749 - aiogram.event - INFO - Update id=83466906 is handled. Duration 270 ms by bot id=7849606366
+2025-11-22 01:13:19,462 - aiogram.event - INFO - Update id=83466907 is not handled. Duration 0 ms by bot id=7849606366
+2025-11-22 01:13:23,566 - logger - ERROR - Error fetching BotUser by id 6095810791: relation "bot_user" does not exist
+2025-11-22 01:13:23,765 - aiogram.event - INFO - Update id=83466908 is handled. Duration 239 ms by bot id=7849606366
+2025-11-22 01:13:26,004 - aiogram.event - INFO - Update id=83466909 is handled. Duration 152 ms by bot id=7849606366
+2025-11-22 01:13:30,468 - logger - ERROR - Error creating BotUser with id 6095810791: relation "bot_user" does not exist
+2025-11-22 01:13:30,675 - aiogram.event - INFO - Update id=83466910 is handled. Duration 246 ms by bot id=7849606366
+2025-11-22 01:13:33,592 - aiogram.event - INFO - Update id=83466911 is handled. Duration 351 ms by bot id=7849606366
+2025-11-22 01:13:36,197 - aiogram.event - INFO - Update id=83466912 is handled. Duration 452 ms by bot id=7849606366
+2025-11-22 01:14:06,952 - logger - INFO - BotUser with id 6095810791 not found.
+2025-11-22 01:14:07,145 - aiogram.event - INFO - Update id=83466913 is handled. Duration 232 ms by bot id=7849606366
+2025-11-22 01:14:08,530 - aiogram.event - INFO - Update id=83466914 is handled. Duration 222 ms by bot id=7849606366
+2025-11-22 01:14:15,765 - aiogram.event - INFO - Update id=83466915 is handled. Duration 273 ms by bot id=7849606366
+2025-11-22 01:14:18,591 - aiogram.event - INFO - Update id=83466916 is handled. Duration 299 ms by bot id=7849606366
+2025-11-22 01:14:28,054 - aiogram.event - INFO - Update id=83466917 is handled. Duration 170 ms by bot id=7849606366
+2025-11-22 01:14:28,846 - aiogram.event - INFO - Update id=83466918 is not handled. Duration 55 ms by bot id=7849606366
+2025-11-22 01:14:28,846 - aiogram.event - ERROR - Cause exception while process update id=83466918 by bot id=7849606366
+AttributeError: module 'services.botuser_service' has no attribute 'update'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 115, in callback_set_lang
+    await botuser_service.update(bot_user)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'services.botuser_service' has no attribute 'update'
+2025-11-22 01:14:58,637 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:14:58,637 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:14:58,638 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:14:58,867 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:15:02,666 - logger - INFO - Starting...
+2025-11-22 01:15:02,666 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:15:03,104 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:15:04,362 - aiogram.event - INFO - Update id=83466919 is handled. Duration 457 ms by bot id=7849606366
+2025-11-22 01:15:05,966 - aiogram.event - INFO - Update id=83466920 is handled. Duration 692 ms by bot id=7849606366
+2025-11-22 01:15:06,466 - aiogram.event - INFO - Update id=83466921 is handled. Duration 218 ms by bot id=7849606366
+2025-11-22 01:15:07,782 - aiogram.event - INFO - Update id=83466922 is handled. Duration 712 ms by bot id=7849606366
+2025-11-22 01:15:10,998 - aiogram.event - INFO - Update id=83466923 is handled. Duration 173 ms by bot id=7849606366
+2025-11-22 01:15:12,356 - aiogram.event - INFO - Update id=83466924 is handled. Duration 653 ms by bot id=7849606366
+2025-11-22 01:15:15,865 - aiogram.event - INFO - Update id=83466925 is handled. Duration 359 ms by bot id=7849606366
+2025-11-22 01:15:21,024 - aiogram.event - INFO - Update id=83466926 is not handled. Duration 118 ms by bot id=7849606366
+2025-11-22 01:15:21,025 - aiogram.event - ERROR - Cause exception while process update id=83466926 by bot id=7849606366
+FileNotFoundError: [Errno 2] No such file or directory: 'qrcodes/bc88dae0-4044-45de-9a27-8b376c975582.png'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 164, in send_invitation
+    qr_path = fn.create_guest_qr(guest, lang)
+  File "D:\PROJECTS\WeddingBot\functions.py", line 31, in create_guest_qr
+    img.save(path)
+    ~~~~~~~~^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\qrcode\image\pil.py", line 54, in save
+    self._img.save(stream, format=format, **kwargs)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\PIL\Image.py", line 2566, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'qrcodes/bc88dae0-4044-45de-9a27-8b376c975582.png'
+2025-11-22 01:15:45,643 - aiogram.event - INFO - Update id=83466927 is handled. Duration 336 ms by bot id=7849606366
+2025-11-22 01:15:48,597 - aiogram.event - INFO - Update id=83466928 is not handled. Duration 93 ms by bot id=7849606366
+2025-11-22 01:15:48,597 - aiogram.event - ERROR - Cause exception while process update id=83466928 by bot id=7849606366
+ValidationError: 2 validation errors for SendPhoto
+photo.str
+  Input should be a valid string [type=string_type, input_value=<_io.BufferedReader name=...-a59b-e2e110d6b304.png'>, input_type=BufferedReader]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+photo.is-instance[InputFile]
+  Input should be an instance of InputFile [type=is_instance_of, input_value=<_io.BufferedReader name=...-a59b-e2e110d6b304.png'>, input_type=BufferedReader]
+    For further information visit https://errors.pydantic.dev/2.11/v/is_instance_of
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 171, in send_invitation
+    await message.answer_photo(photo=qr_file, caption=t("invitation_ready", lang))
+          ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\types\message.py", line 2407, in answer_photo
+    return SendPhoto(
+           ~~~~~~~~~^
+        chat_id=self.chat.id,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<18 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).as_(self._bot)
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\pydantic\main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for SendPhoto
+photo.str
+  Input should be a valid string [type=string_type, input_value=<_io.BufferedReader name=...-a59b-e2e110d6b304.png'>, input_type=BufferedReader]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+photo.is-instance[InputFile]
+  Input should be an instance of InputFile [type=is_instance_of, input_value=<_io.BufferedReader name=...-a59b-e2e110d6b304.png'>, input_type=BufferedReader]
+    For further information visit https://errors.pydantic.dev/2.11/v/is_instance_of
+2025-11-22 01:18:11,021 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:18:11,022 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:18:11,022 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:18:11,279 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:18:20,555 - logger - INFO - Starting...
+2025-11-22 01:18:20,555 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:18:21,215 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:18:28,394 - aiogram.event - INFO - Update id=83466929 is handled. Duration 817 ms by bot id=7849606366
+2025-11-22 01:18:33,254 - logger - INFO - Guest with reg number 📩 Taklifnomani olish not found.
+2025-11-22 01:18:33,315 - logger - INFO - Guest with name 📩 Taklifnomani olish not found.
+2025-11-22 01:18:33,534 - aiogram.event - INFO - Update id=83466930 is handled. Duration 320 ms by bot id=7849606366
+2025-11-22 01:18:40,660 - aiogram.event - INFO - Update id=83466931 is handled. Duration 570 ms by bot id=7849606366
+2025-11-22 01:18:43,242 - logger - INFO - Guest with reg number 🇺🇿 Til o'zgartirish not found.
+2025-11-22 01:18:43,282 - logger - INFO - Guest with name 🇺🇿 Til o'zgartirish not found.
+2025-11-22 01:18:43,466 - aiogram.event - INFO - Update id=83466932 is handled. Duration 262 ms by bot id=7849606366
+2025-11-22 01:18:47,281 - aiogram.event - INFO - Update id=83466933 is handled. Duration 241 ms by bot id=7849606366
+2025-11-22 01:18:51,446 - aiogram.event - INFO - Update id=83466934 is handled. Duration 458 ms by bot id=7849606366
+2025-11-22 01:21:20,617 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:21:20,618 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:21:20,618 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:21:20,870 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:40:43,388 - logger - INFO - Starting...
+2025-11-22 01:40:43,389 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:40:43,941 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:41:02,586 - aiogram.event - INFO - Update id=83466935 is handled. Duration 709 ms by bot id=7849606366
+2025-11-22 01:41:10,547 - logger - INFO - Guest with reg number Azizbek not found.
+2025-11-22 01:41:10,607 - logger - INFO - Guest with name Azizbek not found.
+2025-11-22 01:41:10,809 - aiogram.event - INFO - Update id=83466936 is handled. Duration 300 ms by bot id=7849606366
+2025-11-22 01:41:19,020 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:41:19,021 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:41:19,021 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:41:19,284 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:45:37,780 - logger - INFO - Starting...
+2025-11-22 01:45:37,781 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:45:38,321 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:45:44,732 - aiogram.event - INFO - Update id=83466937 is handled. Duration 835 ms by bot id=7849606366
+2025-11-22 01:45:56,508 - logger - INFO - Guest with reg number "Makhfuzakhon Nazarova and Rustam Gabitov" not found.
+2025-11-22 01:45:56,562 - logger - INFO - Guest with name "Makhfuzakhon Nazarova and Rustam Gabitov" not found.
+2025-11-22 01:45:56,712 - aiogram.event - INFO - Update id=83466938 is handled. Duration 243 ms by bot id=7849606366
+2025-11-22 01:46:00,802 - aiogram.event - INFO - Update id=83466939 is handled. Duration 403 ms by bot id=7849606366
+2025-11-22 01:46:04,014 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:46:04,351 - aiogram.event - INFO - Update id=83466940 is handled. Duration 380 ms by bot id=7849606366
+2025-11-22 01:46:07,241 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:46:07,263 - aiogram.event - INFO - Update id=83466941 is not handled. Duration 63 ms by bot id=7849606366
+2025-11-22 01:46:07,263 - aiogram.event - ERROR - Cause exception while process update id=83466941 by bot id=7849606366
+AttributeError: module 'services.guest_service' has no attribute 'get_by_full_name'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 108, in save_info
+    guest = await guest_service.get_by_full_name(reg_number)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'services.guest_service' has no attribute 'get_by_full_name'. Did you mean: 'get_by_name'?
+2025-11-22 01:46:23,401 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:46:23,402 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:46:23,402 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:46:23,658 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:46:27,786 - logger - INFO - Starting...
+2025-11-22 01:46:27,786 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:46:28,217 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:46:42,159 - logger - INFO - BotUser with id 6095810791 not found.
+2025-11-22 01:46:42,640 - aiogram.event - INFO - Update id=83466942 is handled. Duration 521 ms by bot id=7849606366
+2025-11-22 01:46:44,197 - aiogram.event - INFO - Update id=83466943 is handled. Duration 211 ms by bot id=7849606366
+2025-11-22 01:46:52,641 - aiogram.event - INFO - Update id=83466944 is not handled. Duration 1 ms by bot id=7849606366
+2025-11-22 01:47:50,090 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:47:50,090 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:47:50,090 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:47:50,356 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:47:54,033 - logger - INFO - Starting...
+2025-11-22 01:47:54,033 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:47:54,630 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:47:59,780 - logger - INFO - BotUser with id 6095810791 not found.
+2025-11-22 01:48:00,235 - aiogram.event - INFO - Update id=83466945 is handled. Duration 495 ms by bot id=7849606366
+2025-11-22 01:48:01,382 - aiogram.event - INFO - Update id=83466946 is handled. Duration 216 ms by bot id=7849606366
+2025-11-22 01:48:02,750 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-22 01:48:02,961 - aiogram.event - INFO - Update id=83466947 is handled. Duration 288 ms by bot id=7849606366
+2025-11-22 01:48:23,319 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:48:23,320 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:48:23,320 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:48:23,580 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:48:27,758 - logger - INFO - Starting...
+2025-11-22 01:48:27,759 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:48:28,181 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:48:29,577 - aiogram.event - INFO - Update id=83466948 is handled. Duration 647 ms by bot id=7849606366
+2025-11-22 01:48:43,681 - logger - INFO - BotUser with id 6095810791 not found.
+2025-11-22 01:48:43,923 - aiogram.event - INFO - Update id=83466949 is handled. Duration 290 ms by bot id=7849606366
+2025-11-22 01:48:45,708 - aiogram.event - INFO - Update id=83466950 is handled. Duration 414 ms by bot id=7849606366
+2025-11-22 01:48:47,328 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-22 01:48:47,576 - aiogram.event - INFO - Update id=83466951 is handled. Duration 325 ms by bot id=7849606366
+2025-11-22 01:49:36,302 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:49:36,303 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:49:36,303 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:49:36,554 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:49:40,171 - logger - INFO - Starting...
+2025-11-22 01:49:40,171 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:49:40,619 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:49:44,179 - logger - INFO - BotUser with id 6095810791 not found.
+2025-11-22 01:49:44,683 - aiogram.event - INFO - Update id=83466952 is handled. Duration 544 ms by bot id=7849606366
+2025-11-22 01:49:45,769 - aiogram.event - INFO - Update id=83466953 is handled. Duration 387 ms by bot id=7849606366
+2025-11-22 01:49:49,886 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-22 01:49:50,058 - aiogram.event - INFO - Update id=83466954 is handled. Duration 376 ms by bot id=7849606366
+2025-11-22 01:49:55,691 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:49:55,924 - aiogram.event - INFO - Update id=83466955 is handled. Duration 272 ms by bot id=7849606366
+2025-11-22 01:49:58,524 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:49:58,832 - aiogram.event - INFO - Update id=83466956 is handled. Duration 350 ms by bot id=7849606366
+2025-11-22 01:50:03,462 - aiogram.event - INFO - Update id=83466957 is handled. Duration 366 ms by bot id=7849606366
+2025-11-22 01:50:11,651 - logger - INFO - Guest with reg number 📩 Получить пригласительный not found.
+2025-11-22 01:50:11,704 - logger - INFO - Guest with name 📩 Получить пригласительный not found.
+2025-11-22 01:50:11,896 - aiogram.event - INFO - Update id=83466958 is handled. Duration 394 ms by bot id=7849606366
+2025-11-22 01:50:13,583 - aiogram.event - INFO - Update id=83466959 is handled. Duration 172 ms by bot id=7849606366
+2025-11-22 01:50:15,355 - aiogram.event - INFO - Update id=83466960 is handled. Duration 709 ms by bot id=7849606366
+2025-11-22 01:50:17,490 - aiogram.event - INFO - Update id=83466961 is handled. Duration 183 ms by bot id=7849606366
+2025-11-22 01:50:18,772 - aiogram.event - INFO - Update id=83466962 is handled. Duration 672 ms by bot id=7849606366
+2025-11-22 01:50:22,280 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:50:22,280 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:50:22,281 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:50:22,540 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:51:05,470 - logger - INFO - Starting...
+2025-11-22 01:51:05,471 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:51:05,893 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:51:06,557 - aiogram.event - INFO - Update id=83466963 is handled. Duration 480 ms by bot id=7849606366
+2025-11-22 01:51:11,443 - aiogram.event - INFO - Update id=83466964 is handled. Duration 202 ms by bot id=7849606366
+2025-11-22 01:51:17,702 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:51:18,107 - aiogram.event - INFO - Update id=83466965 is handled. Duration 444 ms by bot id=7849606366
+2025-11-22 01:52:20,942 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:52:20,943 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:52:20,943 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:52:21,204 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:52:24,905 - logger - INFO - Starting...
+2025-11-22 01:52:24,905 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:52:25,421 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:52:29,008 - aiogram.event - INFO - Update id=83466966 is handled. Duration 568 ms by bot id=7849606366
+2025-11-22 01:52:31,603 - aiogram.event - INFO - Update id=83466967 is handled. Duration 275 ms by bot id=7849606366
+2025-11-22 01:52:44,565 - logger - INFO - Guest with reg number wufnweuyifbnew not found.
+2025-11-22 01:52:44,620 - logger - INFO - Guest with name wufnweuyifbnew not found.
+2025-11-22 01:52:44,764 - aiogram.event - INFO - Update id=83466968 is handled. Duration 242 ms by bot id=7849606366
+2025-11-22 01:52:47,811 - aiogram.event - INFO - Update id=83466969 is handled. Duration 288 ms by bot id=7849606366
+2025-11-22 01:52:52,530 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:52:52,796 - aiogram.event - INFO - Update id=83466970 is handled. Duration 305 ms by bot id=7849606366
+2025-11-22 01:52:58,517 - aiogram.event - INFO - Update id=83466971 is handled. Duration 157 ms by bot id=7849606366
+2025-11-22 01:53:00,089 - aiogram.event - INFO - Update id=83466972 is handled. Duration 648 ms by bot id=7849606366
+2025-11-22 01:53:02,918 - aiogram.event - INFO - Update id=83466973 is handled. Duration 223 ms by bot id=7849606366
+2025-11-22 01:53:03,725 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:53:03,960 - aiogram.event - INFO - Update id=83466974 is handled. Duration 273 ms by bot id=7849606366
+2025-11-22 01:53:10,363 - aiogram.event - INFO - Update id=83466975 is handled. Duration 224 ms by bot id=7849606366
+2025-11-22 01:53:21,502 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:53:21,503 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:53:21,503 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:53:21,756 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:56:02,110 - logger - INFO - Starting...
+2025-11-22 01:56:02,110 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:56:02,671 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:56:05,940 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-22 01:56:05,955 - aiogram.event - INFO - Update id=83466976 is not handled. Duration 195 ms by bot id=7849606366
+2025-11-22 01:56:05,956 - aiogram.event - ERROR - Cause exception while process update id=83466976 by bot id=7849606366
+UnboundLocalError: cannot access local variable 'lang' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\user_handler.py", line 32, in welcome
+    await message.answer(t("welcome", lang), reply_markup=keyboards.get_start_keyboard(lang))
+                                      ^^^^
+UnboundLocalError: cannot access local variable 'lang' where it is not associated with a value
+2025-11-22 01:56:21,262 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:56:21,262 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:56:21,262 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:56:21,525 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:56:25,024 - logger - INFO - Starting...
+2025-11-22 01:56:25,024 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:56:25,405 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:56:27,815 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-22 01:56:28,325 - aiogram.event - INFO - Update id=83466977 is handled. Duration 709 ms by bot id=7849606366
+2025-11-22 01:56:32,729 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-22 01:56:33,023 - aiogram.event - INFO - Update id=83466978 is handled. Duration 390 ms by bot id=7849606366
+2025-11-22 01:56:39,838 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:56:40,093 - aiogram.event - INFO - Update id=83466979 is handled. Duration 299 ms by bot id=7849606366
+2025-11-22 01:56:41,822 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:56:42,109 - aiogram.event - INFO - Update id=83466980 is handled. Duration 330 ms by bot id=7849606366
+2025-11-22 01:56:44,771 - aiogram.event - INFO - Update id=83466981 is handled. Duration 280 ms by bot id=7849606366
+2025-11-22 01:56:47,495 - logger - INFO - Guest with reg number Makhfuzakhon Nazarova and Rustam Gabitov not found.
+2025-11-22 01:56:47,947 - aiogram.event - INFO - Update id=83466982 is handled. Duration 492 ms by bot id=7849606366
+2025-11-22 01:56:52,040 - aiogram.event - INFO - Update id=83466983 is handled. Duration 267 ms by bot id=7849606366
+2025-11-22 01:57:09,760 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 01:57:09,760 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 01:57:09,760 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 01:57:09,926 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:57:13,800 - logger - INFO - Starting...
+2025-11-22 01:57:13,800 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 01:57:14,339 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 01:57:26,803 - logger - INFO - BotUser with id 6095810791 not found.
+2025-11-22 01:57:27,325 - aiogram.event - INFO - Update id=83466984 is handled. Duration 677 ms by bot id=7849606366
+2025-11-22 01:57:29,115 - aiogram.event - INFO - Update id=83466985 is handled. Duration 440 ms by bot id=7849606366
+2025-11-22 01:57:30,190 - aiogram.event - INFO - Update id=83466986 is handled. Duration 337 ms by bot id=7849606366
+2025-11-22 01:57:31,271 - aiogram.event - INFO - Update id=83466987 is handled. Duration 300 ms by bot id=7849606366
+2025-11-22 01:57:38,341 - aiogram.event - INFO - Update id=83466988 is handled. Duration 169 ms by bot id=7849606366
+2025-11-22 01:57:39,881 - aiogram.event - INFO - Update id=83466989 is handled. Duration 588 ms by bot id=7849606366
+2025-11-22 01:57:42,028 - aiogram.event - INFO - Update id=83466990 is handled. Duration 222 ms by bot id=7849606366
+2025-11-22 01:57:44,747 - aiogram.event - INFO - Update id=83466991 is handled. Duration 191 ms by bot id=7849606366
+2025-11-22 01:57:46,353 - aiogram.event - INFO - Update id=83466992 is handled. Duration 527 ms by bot id=7849606366
+2025-11-22 01:57:48,088 - aiogram.event - INFO - Update id=83466993 is handled. Duration 190 ms by bot id=7849606366
+2025-11-22 01:57:49,981 - aiogram.event - INFO - Update id=83466994 is handled. Duration 779 ms by bot id=7849606366
+2025-11-22 01:57:51,417 - aiogram.event - INFO - Update id=83466995 is handled. Duration 231 ms by bot id=7849606366
+2025-11-22 02:00:04,086 - logger - INFO - BotUser with id 6473902630 not found.
+2025-11-22 02:00:04,313 - aiogram.event - INFO - Update id=83466996 is handled. Duration 265 ms by bot id=7849606366
+2025-11-22 02:00:07,209 - aiogram.event - INFO - Update id=83466997 is handled. Duration 359 ms by bot id=7849606366
+2025-11-22 02:00:08,820 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-22 02:00:08,969 - aiogram.event - INFO - Update id=83466998 is handled. Duration 253 ms by bot id=7849606366
+2025-11-22 02:00:11,682 - logger - INFO - Guest with reg number uqbdubqw not found.
+2025-11-22 02:00:11,840 - logger - INFO - Guest with name uqbdubqw not found.
+2025-11-22 02:00:12,023 - aiogram.event - INFO - Update id=83466999 is handled. Duration 380 ms by bot id=7849606366
+2025-11-22 02:00:13,596 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-22 02:00:13,795 - aiogram.event - INFO - Update id=83467000 is handled. Duration 275 ms by bot id=7849606366
+2025-11-22 02:00:18,522 - aiogram.event - INFO - Update id=83467001 is handled. Duration 0 ms by bot id=7849606366
+2025-11-22 02:00:39,815 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 02:00:39,816 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 02:00:39,816 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 02:00:40,078 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:00:43,949 - logger - INFO - Starting...
+2025-11-22 02:00:43,949 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 02:00:44,511 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:00:48,910 - aiogram.event - INFO - Update id=83467002 is handled. Duration 477 ms by bot id=7849606366
+2025-11-22 02:01:02,348 - logger - INFO - BotUser with id 6473902630 not found.
+2025-11-22 02:01:02,596 - aiogram.event - INFO - Update id=83467003 is handled. Duration 287 ms by bot id=7849606366
+2025-11-22 02:01:05,061 - aiogram.event - INFO - Update id=83467004 is handled. Duration 193 ms by bot id=7849606366
+2025-11-22 02:01:13,682 - aiogram.event - INFO - Update id=83467005 is handled. Duration 375 ms by bot id=7849606366
+2025-11-22 02:01:17,333 - aiogram.event - INFO - Update id=83467006 is handled. Duration 319 ms by bot id=7849606366
+2025-11-22 02:02:49,981 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 02:02:49,982 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 02:02:49,982 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 02:02:50,241 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:02:53,956 - logger - INFO - Starting...
+2025-11-22 02:02:53,957 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 02:02:54,393 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:02:55,085 - aiogram.event - INFO - Update id=83467007 is handled. Duration 516 ms by bot id=7849606366
+2025-11-22 02:03:06,821 - aiogram.event - INFO - Update id=83467008 is handled. Duration 162 ms by bot id=7849606366
+2025-11-22 02:03:08,440 - aiogram.event - INFO - Update id=83467009 is handled. Duration 558 ms by bot id=7849606366
+2025-11-22 02:03:12,617 - aiogram.event - INFO - Update id=83467010 is handled. Duration 159 ms by bot id=7849606366
+2025-11-22 02:03:15,464 - aiogram.event - INFO - Update id=83467011 is handled. Duration 713 ms by bot id=7849606366
+2025-11-22 02:03:20,314 - aiogram.event - INFO - Update id=83467012 is handled. Duration 174 ms by bot id=7849606366
+2025-11-22 02:03:34,987 - aiogram.event - INFO - Update id=83467013 is handled. Duration 212 ms by bot id=7849606366
+2025-11-22 02:03:37,447 - logger - INFO - Guest with reg number /host not found.
+2025-11-22 02:03:37,502 - logger - INFO - Guest with name /host not found.
+2025-11-22 02:03:37,762 - aiogram.event - INFO - Update id=83467014 is handled. Duration 353 ms by bot id=7849606366
+2025-11-22 02:03:41,974 - aiogram.event - INFO - Update id=83467015 is handled. Duration 155 ms by bot id=7849606366
+2025-11-22 02:03:44,073 - aiogram.event - INFO - Update id=83467016 is handled. Duration 238 ms by bot id=7849606366
+2025-11-22 02:03:46,446 - aiogram.event - INFO - Update id=83467017 is handled. Duration 183 ms by bot id=7849606366
+2025-11-22 02:03:47,924 - aiogram.event - INFO - Update id=83467018 is handled. Duration 550 ms by bot id=7849606366
+2025-11-22 02:03:50,394 - aiogram.event - INFO - Update id=83467019 is handled. Duration 199 ms by bot id=7849606366
+2025-11-22 02:03:54,795 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 02:03:54,796 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 02:03:54,796 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 02:03:55,061 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:05:51,340 - logger - INFO - Starting...
+2025-11-22 02:05:51,340 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 02:05:51,846 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:05:53,247 - aiogram.event - INFO - Update id=83467020 is handled. Duration 542 ms by bot id=7849606366
+2025-11-22 02:05:54,550 - aiogram.event - INFO - Update id=83467021 is handled. Duration 676 ms by bot id=7849606366
+2025-11-22 02:05:55,311 - aiogram.event - INFO - Update id=83467022 is handled. Duration 156 ms by bot id=7849606366
+2025-11-22 02:05:56,583 - aiogram.event - INFO - Update id=83467023 is handled. Duration 539 ms by bot id=7849606366
+2025-11-22 02:05:57,422 - aiogram.event - INFO - Update id=83467024 is handled. Duration 238 ms by bot id=7849606366
+2025-11-22 02:05:58,523 - aiogram.event - INFO - Update id=83467025 is handled. Duration 569 ms by bot id=7849606366
+2025-11-22 02:06:02,756 - aiogram.event - INFO - Update id=83467026 is handled. Duration 164 ms by bot id=7849606366
+2025-11-22 02:06:03,970 - aiogram.event - INFO - Update id=83467027 is handled. Duration 583 ms by bot id=7849606366
+2025-11-22 02:06:04,631 - aiogram.event - INFO - Update id=83467028 is handled. Duration 166 ms by bot id=7849606366
+2025-11-22 02:06:05,844 - aiogram.event - INFO - Update id=83467029 is handled. Duration 557 ms by bot id=7849606366
+2025-11-22 02:06:06,666 - aiogram.event - INFO - Update id=83467030 is handled. Duration 168 ms by bot id=7849606366
+2025-11-22 02:06:08,086 - aiogram.event - INFO - Update id=83467031 is handled. Duration 583 ms by bot id=7849606366
+2025-11-22 02:06:21,435 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 02:06:21,435 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 02:06:21,436 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 02:06:21,699 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:06:25,372 - logger - INFO - Starting...
+2025-11-22 02:06:25,373 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 02:06:25,830 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:06:27,318 - aiogram.event - INFO - Update id=83467032 is handled. Duration 429 ms by bot id=7849606366
+2025-11-22 02:06:28,599 - aiogram.event - INFO - Update id=83467033 is handled. Duration 667 ms by bot id=7849606366
+2025-11-22 02:06:29,297 - aiogram.event - INFO - Update id=83467034 is handled. Duration 161 ms by bot id=7849606366
+2025-11-22 02:06:30,469 - aiogram.event - INFO - Update id=83467035 is handled. Duration 619 ms by bot id=7849606366
+2025-11-22 02:06:31,019 - aiogram.event - INFO - Update id=83467036 is handled. Duration 203 ms by bot id=7849606366
+2025-11-22 02:06:32,336 - aiogram.event - INFO - Update id=83467037 is handled. Duration 675 ms by bot id=7849606366
+2025-11-22 02:06:38,778 - aiogram.event - INFO - Update id=83467038 is handled. Duration 228 ms by bot id=7849606366
+2025-11-22 02:06:40,074 - aiogram.event - INFO - Update id=83467039 is handled. Duration 698 ms by bot id=7849606366
+2025-11-22 02:06:40,368 - aiogram.event - INFO - Update id=83467040 is handled. Duration 150 ms by bot id=7849606366
+2025-11-22 02:06:41,912 - aiogram.event - INFO - Update id=83467041 is handled. Duration 652 ms by bot id=7849606366
+2025-11-22 02:06:42,679 - aiogram.event - INFO - Update id=83467042 is handled. Duration 148 ms by bot id=7849606366
+2025-11-22 02:06:43,883 - aiogram.event - INFO - Update id=83467043 is handled. Duration 586 ms by bot id=7849606366
+2025-11-22 02:06:49,683 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 02:06:49,684 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 02:06:49,684 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 02:06:49,939 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:11:46,191 - logger - INFO - Starting...
+2025-11-22 02:11:46,192 - aiogram.dispatcher - INFO - Start polling
+2025-11-22 02:11:46,734 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-22 02:11:50,174 - aiogram.event - INFO - Update id=83467044 is handled. Duration 611 ms by bot id=7849606366
+2025-11-22 02:11:52,086 - aiogram.event - INFO - Update id=83467045 is handled. Duration 332 ms by bot id=7849606366
+2025-11-22 02:11:53,856 - logger - INFO - Guest with reg number asdasd not found.
+2025-11-22 02:11:53,911 - logger - INFO - Guest with name asdasd not found.
+2025-11-22 02:11:54,091 - aiogram.event - INFO - Update id=83467046 is handled. Duration 380 ms by bot id=7849606366
+2025-11-22 02:11:55,554 - aiogram.event - INFO - Update id=83467047 is handled. Duration 215 ms by bot id=7849606366
+2025-11-22 02:12:07,477 - aiogram.event - INFO - Update id=83467048 is handled. Duration 285 ms by bot id=7849606366
+2025-11-22 02:12:10,308 - aiogram.event - INFO - Update id=83467049 is handled. Duration 220 ms by bot id=7849606366
+2025-11-22 02:12:13,557 - aiogram.event - INFO - Update id=83467050 is handled. Duration 358 ms by bot id=7849606366
+2025-11-22 02:16:21,665 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-22 02:16:21,665 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-22 02:16:21,666 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-22 02:16:21,929 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 20:43:12,067 - logger - INFO - Starting...
+2025-11-24 20:43:12,067 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 20:43:12,687 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 20:43:21,926 - aiogram.event - INFO - Update id=83467051 is handled. Duration 602 ms by bot id=7849606366
+2025-11-24 20:43:44,187 - aiogram.event - INFO - Update id=83467052 is handled. Duration 332 ms by bot id=7849606366
+2025-11-24 20:43:52,501 - aiogram.event - INFO - Update id=83467053 is handled. Duration 407 ms by bot id=7849606366
+2025-11-24 20:44:51,401 - aiogram.event - INFO - Update id=83467054 is handled. Duration 498 ms by bot id=7849606366
+2025-11-24 20:47:42,929 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 20:47:42,930 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 20:47:42,930 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 20:47:43,184 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 20:47:46,986 - logger - INFO - Starting...
+2025-11-24 20:47:46,986 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 20:47:47,625 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 20:47:53,605 - aiogram.event - INFO - Update id=83467055 is handled. Duration 4446 ms by bot id=7849606366
+2025-11-24 20:48:03,662 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] The network connection was aborted by the local system
+2025-11-24 20:48:03,664 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 20:48:04,674 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [The network location cannot be reached. For information about network troubleshooting, see Windows Help]
+2025-11-24 20:48:04,674 - aiogram.dispatcher - WARNING - Sleep for 1.315412 seconds and try again... (tryings = 1, bot id = 7849606366)
+2025-11-24 20:48:05,997 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [The network location cannot be reached. For information about network troubleshooting, see Windows Help]
+2025-11-24 20:48:05,997 - aiogram.dispatcher - WARNING - Sleep for 1.540664 seconds and try again... (tryings = 2, bot id = 7849606366)
+2025-11-24 20:48:07,553 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [The network location cannot be reached. For information about network troubleshooting, see Windows Help]
+2025-11-24 20:48:07,553 - aiogram.dispatcher - WARNING - Sleep for 1.900772 seconds and try again... (tryings = 3, bot id = 7849606366)
+2025-11-24 20:48:19,901 - aiogram.dispatcher - INFO - Connection established (tryings = 4, bot id = 7849606366)
+2025-11-24 20:51:34,355 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 20:51:34,355 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 20:51:34,356 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 20:51:34,610 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 20:51:37,265 - logger - INFO - Starting...
+2025-11-24 20:51:37,266 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 20:51:37,818 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 20:51:41,567 - aiogram.event - INFO - Update id=83467056 is handled. Duration 2079 ms by bot id=7849606366
+2025-11-24 20:52:05,023 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:05,242 - aiogram.event - INFO - Update id=83467057 is handled. Duration 319 ms by bot id=7849606366
+2025-11-24 20:52:07,474 - aiogram.event - INFO - Update id=83467058 is handled. Duration 260 ms by bot id=7849606366
+2025-11-24 20:52:09,522 - aiogram.event - INFO - Update id=83467059 is handled. Duration 596 ms by bot id=7849606366
+2025-11-24 20:52:11,167 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:12,759 - aiogram.event - INFO - Update id=83467060 is handled. Duration 1668 ms by bot id=7849606366
+2025-11-24 20:52:14,160 - aiogram.event - INFO - Update id=83467061 is handled. Duration 191 ms by bot id=7849606366
+2025-11-24 20:52:15,032 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:15,201 - aiogram.event - INFO - Update id=83467062 is handled. Duration 267 ms by bot id=7849606366
+2025-11-24 20:52:16,662 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:16,860 - aiogram.event - INFO - Update id=83467063 is handled. Duration 286 ms by bot id=7849606366
+2025-11-24 20:52:18,796 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:19,054 - aiogram.event - INFO - Update id=83467064 is handled. Duration 453 ms by bot id=7849606366
+2025-11-24 20:52:22,470 - logger - INFO - Guest with reg number iwef iuwe not found.
+2025-11-24 20:52:22,521 - logger - INFO - Guest with name iwef iuwe not found.
+2025-11-24 20:52:22,730 - aiogram.event - INFO - Update id=83467065 is handled. Duration 298 ms by bot id=7849606366
+2025-11-24 20:52:25,999 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:26,200 - aiogram.event - INFO - Update id=83467066 is handled. Duration 507 ms by bot id=7849606366
+2025-11-24 20:52:29,851 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-24 20:52:30,049 - aiogram.event - INFO - Update id=83467067 is handled. Duration 281 ms by bot id=7849606366
+2025-11-24 20:52:43,838 - aiogram.event - INFO - Update id=83467068 is handled. Duration 259 ms by bot id=7849606366
+2025-11-24 20:52:50,575 - aiogram.event - INFO - Update id=83467069 is handled. Duration 4324 ms by bot id=7849606366
+2025-11-24 20:53:04,041 - aiogram.event - INFO - Update id=83467070 is handled. Duration 265 ms by bot id=7849606366
+2025-11-24 20:53:05,485 - aiogram.event - INFO - Update id=83467071 is handled. Duration 620 ms by bot id=7849606366
+2025-11-24 20:53:08,389 - aiogram.event - INFO - Update id=83467072 is handled. Duration 2180 ms by bot id=7849606366
+2025-11-24 20:53:32,444 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 20:53:32,444 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 20:53:32,445 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 20:53:32,712 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:06:22,835 - logger - INFO - Starting...
+2025-11-24 21:06:22,835 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:06:23,463 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:06:28,321 - aiogram.event - INFO - Update id=83467073 is not handled. Duration 1 ms by bot id=7849606366
+2025-11-24 21:06:43,496 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:06:43,496 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:06:43,496 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:06:43,748 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:07:06,944 - logger - INFO - Starting...
+2025-11-24 21:07:06,944 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:07:07,421 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:08:18,271 - aiogram.event - INFO - Update id=83467074 is not handled. Duration 1 ms by bot id=7849606366
+2025-11-24 21:08:20,920 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-24 21:08:21,439 - aiogram.event - INFO - Update id=83467075 is handled. Duration 726 ms by bot id=7849606366
+2025-11-24 21:08:25,037 - aiogram.event - INFO - Update id=83467076 is not handled. Duration 0 ms by bot id=7849606366
+2025-11-24 21:08:44,267 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:08:44,268 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:08:44,268 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:08:44,527 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:08:47,955 - logger - INFO - Starting...
+2025-11-24 21:08:47,955 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:08:48,464 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:08:49,623 - aiogram.event - INFO - Update id=83467077 is not handled. Duration 68 ms by bot id=7849606366
+2025-11-24 21:08:49,623 - aiogram.event - ERROR - Cause exception while process update id=83467077 by bot id=7849606366
+TypeError: list indices must be integers or slices, not KeyboardButton
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 27, in admin_welcome
+    await message.answer(t("admin_welcome", lang), reply_markup=keyboards.get_admin_menu(lang))
+                                                                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "D:\PROJECTS\WeddingBot\keyboards.py", line 131, in get_admin_menu
+    [KeyboardButton(text="🖨 Excel print")]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [KeyboardButton(text="🇺🇿 Til o'zgartirish")],
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not KeyboardButton
+2025-11-24 21:09:02,544 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-24 21:09:03,069 - aiogram.event - INFO - Update id=83467078 is handled. Duration 730 ms by bot id=7849606366
+2025-11-24 21:09:04,432 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-24 21:09:04,651 - aiogram.event - INFO - Update id=83467079 is handled. Duration 322 ms by bot id=7849606366
+2025-11-24 21:09:08,911 - logger - INFO - Guest with reg number /host not found.
+2025-11-24 21:09:08,975 - logger - INFO - Guest with name /host not found.
+2025-11-24 21:09:09,181 - aiogram.event - INFO - Update id=83467080 is handled. Duration 309 ms by bot id=7849606366
+2025-11-24 21:09:21,411 - aiogram.event - INFO - Update id=83467081 is not handled. Duration 1 ms by bot id=7849606366
+2025-11-24 21:09:28,008 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-24 21:09:28,211 - aiogram.event - INFO - Update id=83467082 is handled. Duration 505 ms by bot id=7849606366
+2025-11-24 21:09:29,899 - logger - INFO - Guest with tg id 6473902630 not found.
+2025-11-24 21:09:30,175 - aiogram.event - INFO - Update id=83467083 is handled. Duration 364 ms by bot id=7849606366
+2025-11-24 21:09:31,461 - aiogram.event - INFO - Update id=83467084 is handled. Duration 402 ms by bot id=7849606366
+2025-11-24 21:09:36,488 - aiogram.event - INFO - Update id=83467085 is handled. Duration 3066 ms by bot id=7849606366
+2025-11-24 21:09:55,890 - aiogram.event - INFO - Update id=83467087 is not handled. Duration 55 ms by bot id=7849606366
+2025-11-24 21:09:55,890 - aiogram.event - ERROR - Cause exception while process update id=83467087 by bot id=7849606366
+TypeError: list indices must be integers or slices, not KeyboardButton
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 27, in admin_welcome
+    await message.answer(t("admin_welcome", lang), reply_markup=keyboards.get_admin_menu(lang))
+                                                                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "D:\PROJECTS\WeddingBot\keyboards.py", line 131, in get_admin_menu
+    [KeyboardButton(text="🖨 Excel print")]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [KeyboardButton(text="🇺🇿 Til o'zgartirish")],
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not KeyboardButton
+2025-11-24 21:09:56,054 - aiogram.event - INFO - Update id=83467086 is handled. Duration 2803 ms by bot id=7849606366
+2025-11-24 21:09:58,123 - aiogram.event - INFO - Update id=83467088 is handled. Duration 176 ms by bot id=7849606366
+2025-11-24 21:10:00,566 - aiogram.event - INFO - Update id=83467089 is not handled. Duration 432 ms by bot id=7849606366
+2025-11-24 21:10:00,566 - aiogram.event - ERROR - Cause exception while process update id=83467089 by bot id=7849606366
+TypeError: list indices must be integers or slices, not KeyboardButton
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\base_handler.py", line 39, in callback_set_lang
+    await callback.message.answer(t("lang_changed", lang), reply_markup=keyboards.get_admin_menu(lang))
+                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "D:\PROJECTS\WeddingBot\keyboards.py", line 131, in get_admin_menu
+    [KeyboardButton(text="🖨 Excel print")]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    [KeyboardButton(text="🇺🇿 Til o'zgartirish")],
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not KeyboardButton
+2025-11-24 21:11:31,470 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:11:31,471 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:11:31,471 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:11:31,680 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:11:35,458 - logger - INFO - Starting...
+2025-11-24 21:11:35,459 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:11:36,037 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:11:37,531 - aiogram.event - INFO - Update id=83467090 is handled. Duration 681 ms by bot id=7849606366
+2025-11-24 21:11:39,167 - aiogram.event - INFO - Update id=83467091 is not handled. Duration 125 ms by bot id=7849606366
+2025-11-24 21:11:39,167 - aiogram.event - ERROR - Cause exception while process update id=83467091 by bot id=7849606366
+TypeError: object module can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 41, in admin_stats
+    entered_guests = await guest_service
+                     ^^^^^^^^^^^^^^^^^^^
+TypeError: object module can't be used in 'await' expression
+2025-11-24 21:11:55,650 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:11:55,651 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:11:55,651 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:11:55,917 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:11:59,902 - logger - INFO - Starting...
+2025-11-24 21:11:59,902 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:12:00,448 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:12:01,641 - aiogram.event - INFO - Update id=83467092 is not handled. Duration 196 ms by bot id=7849606366
+2025-11-24 21:12:01,642 - aiogram.event - ERROR - Cause exception while process update id=83467092 by bot id=7849606366
+AttributeError: 'list' object has no attribute 'foreach'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 42, in admin_stats
+    entered_guests = len(entered_guests.foreach(lambda g: g.is_entered))
+                         ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'foreach'
+2025-11-24 21:12:51,978 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:12:51,978 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:12:51,978 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:12:52,231 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:12:55,606 - logger - INFO - Starting...
+2025-11-24 21:12:55,606 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:12:56,071 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:12:58,083 - aiogram.event - INFO - Update id=83467093 is not handled. Duration 1 ms by bot id=7849606366
+2025-11-24 21:13:19,293 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:13:19,293 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:13:19,294 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:13:19,547 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:13:23,043 - logger - INFO - Starting...
+2025-11-24 21:13:23,043 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:13:23,530 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:13:25,374 - aiogram.event - INFO - Update id=83467094 is not handled. Duration 100 ms by bot id=7849606366
+2025-11-24 21:13:25,374 - aiogram.event - ERROR - Cause exception while process update id=83467094 by bot id=7849606366
+KeyError: 'registered'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 50, in admin_stats
+    stats_text = t("admin_stats", lang).format(
+        total=total_guests,
+        entered=entered_guests,
+        not_entered=not_entered_guests
+    )
+KeyError: 'registered'
+2025-11-24 21:14:58,959 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:14:58,959 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:14:58,959 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:14:59,213 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:15:03,754 - logger - INFO - Starting...
+2025-11-24 21:15:03,754 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:15:04,233 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:15:06,427 - aiogram.event - INFO - Update id=83467095 is handled. Duration 1383 ms by bot id=7849606366
+2025-11-24 21:15:10,102 - aiogram.event - INFO - Update id=83467096 is handled. Duration 382 ms by bot id=7849606366
+2025-11-24 21:15:12,070 - aiogram.event - INFO - Update id=83467097 is handled. Duration 361 ms by bot id=7849606366
+2025-11-24 21:15:14,779 - aiogram.event - INFO - Update id=83467098 is handled. Duration 1558 ms by bot id=7849606366
+2025-11-24 21:15:16,431 - aiogram.event - INFO - Update id=83467099 is handled. Duration 270 ms by bot id=7849606366
+2025-11-24 21:15:17,843 - aiogram.event - INFO - Update id=83467100 is handled. Duration 703 ms by bot id=7849606366
+2025-11-24 21:15:21,709 - aiogram.event - INFO - Update id=83467101 is handled. Duration 869 ms by bot id=7849606366
+2025-11-24 21:15:52,484 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:15:52,485 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:15:52,485 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:15:52,743 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:19:18,934 - logger - INFO - Starting...
+2025-11-24 21:19:18,934 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:19:19,532 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:19:21,471 - aiogram.event - INFO - Update id=83467102 is not handled. Duration 66 ms by bot id=7849606366
+2025-11-24 21:19:21,471 - aiogram.event - ERROR - Cause exception while process update id=83467102 by bot id=7849606366
+ModuleNotFoundError: No module named 'openpyxl'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 95, in print
+    df.to_excel(filename, index=False)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py", line 2439, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\formats\excel.py", line 943, in write
+    writer = ExcelWriter(
+        writer,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 57, in __init__
+    from openpyxl.workbook import Workbook
+ModuleNotFoundError: No module named 'openpyxl'
+2025-11-24 21:19:27,184 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:19:27,185 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:19:27,185 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:19:27,447 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:19:39,967 - logger - INFO - Starting...
+2025-11-24 21:19:39,968 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:19:41,954 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:19:42,537 - aiogram.event - INFO - Update id=83467103 is handled. Duration 414 ms by bot id=7849606366
+2025-11-24 21:20:11,279 - aiogram.event - INFO - Update id=83467104 is handled. Duration 818 ms by bot id=7849606366
+2025-11-24 21:21:19,554 - aiogram.event - INFO - Update id=83467105 is not handled. Duration 1 ms by bot id=7849606366
+2025-11-24 21:21:34,202 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:21:34,203 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:21:34,205 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:21:34,462 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:21:38,568 - logger - INFO - Starting...
+2025-11-24 21:21:38,568 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:21:39,182 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:21:44,505 - aiogram.event - INFO - Update id=83467106 is handled. Duration 552 ms by bot id=7849606366
+2025-11-24 21:21:47,150 - aiogram.event - INFO - Update id=83467107 is not handled. Duration 1168 ms by bot id=7849606366
+2025-11-24 21:21:47,150 - aiogram.event - ERROR - Cause exception while process update id=83467107 by bot id=7849606366
+TypeError: Can't instantiate abstract class InputFile without an implementation for abstract method 'read'
+Traceback (most recent call last):
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Azizbek\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\PROJECTS\WeddingBot\handlers\admin_handler.py", line 99, in print
+    await message.answer_document(InputFile(filename))
+                                  ~~~~~~~~~^^^^^^^^^^
+TypeError: Can't instantiate abstract class InputFile without an implementation for abstract method 'read'
+2025-11-24 21:22:34,476 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:22:34,476 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:22:34,476 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:22:34,733 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:22:38,544 - logger - INFO - Starting...
+2025-11-24 21:22:38,544 - aiogram.dispatcher - INFO - Start polling
+2025-11-24 21:22:39,098 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-24 21:22:42,700 - aiogram.event - INFO - Update id=83467108 is handled. Duration 1273 ms by bot id=7849606366
+2025-11-24 21:23:50,393 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-24 21:23:50,394 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-24 21:23:50,394 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-24 21:23:50,582 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'

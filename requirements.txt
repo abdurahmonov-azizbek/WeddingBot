@@ -1,0 +1,7 @@
+aiogram
+python-dotenv
+qrcode
+asyncpg
+pillow
+pandas
+openpyxl

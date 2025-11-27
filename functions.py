@@ -35,76 +35,66 @@ def create_guest_qr(guest, lang: str = 'uz'):
     return path
 
 
-def create_invitation(qr_path, guest_name, table):
-    bg = Image.open("assets/gpt.png")      # your exact background
-    qr = Image.open(qr_path).convert("RGBA")
-
-    w, h = bg.size
+def create_invitation(qr_path: str, guest_name: str, table: int) -> str:
+    # Load your huge background
+    bg = Image.open("assets/bg.png")
     draw = ImageDraw.Draw(bg)
-    width, height = bg.size
+    w, h = bg.size
+    print(f"Original size: {w}×{h}")  # you'll see it's massive
 
-    # STEP 1: COVER THE GRAY PLACEHOLDER WITH WHITE (so QR shows up)
-    # Draw a white rounded rectangle exactly over the gray box
-    draw.rounded_rectangle(
-        [(1400, 2200), (1860, 2660)],   # exact coordinates of your gray box
-        radius=60,
-        fill="#FFFFFF"
-    )
-
-
+    # === PASTE QR CODE ===
     if os.path.exists(qr_path):
         qr = Image.open(qr_path).convert("RGBA")
-        qr_size = 250
+        qr_size = 1600
         qr = qr.resize((qr_size, qr_size), Image.Resampling.LANCZOS)
-        qr_bg = Image.new("RGBA", (qr_size+20, qr_size+20), (255, 255, 255, 230))
-        qr_bg.paste(qr, (10, 10), qr)  # the qr itself has transparency mask
-        
-        # Paste onto invitation (bottom-right corner)
-        bg.paste(qr_bg, (width - qr_size - 55, height - qr_size - 70), qr_bg)
-        
-    # Font function
+        bg.paste(qr, (3900, 8250), qr)  # your exact spot
+
+    # === FONT LOADER ===
     def font(size):
         try:
-            if size >= 120: return ImageFont.truetype("assets/GreatVibes-Regular.ttf", size)
-            if size >= 80:  return ImageFont.truetype("assets/Cinzel[wght].ttf", size)
-            return ImageFont.truetype("assets/Lora[wght].ttf", size)
+            if size >= 200:
+                return ImageFont.truetype("assets/Lora[wght].ttf", size)
+            elif size >= 100:
+                return ImageFont.truetype("assets/GreatVibes-Regular.ttf", size)
+            else:
+                return ImageFont.truetype("assets/Cinzel[wght].ttf", size)
         except:
-            return ImageFont.load_default().font_variant(size=int(size*1.4))
+            return ImageFont.load_default().font_variant(size=int(size * 1.5))
 
-    def txt(text, y, size=55, color="#E8C07B", stroke=0):
+    # === CENTERED TEXT ===
+    def txt(text, y, size=60, color="#FFFFFF", stroke=0):
         f = font(size)
-        bbox = draw.textbbox((0,0), text, font=f)
-        x = (w - (bbox[2]-bbox[0])) // 2
+        bbox = draw.textbbox((0, 0), text, font=f)
+        x = (w - (bbox[2] - bbox[0])) // 2
         if stroke:
-            draw.text((x,y), text, font=f, fill=color, stroke_width=stroke, stroke_fill="#8B6914")
+            draw.text((x, y), text, font=f, fill=color,
+                      stroke_width=stroke, stroke_fill="#1a1a1a")
         else:
-            draw.text((x,y), text, font=f, fill=color)
+            draw.text((x, y), text, font=f, fill=color)
 
-    # CHANGE ONLY THESE
-    guest_name   = guest_name
-    table_number = f"Table {table}"
+    # === YOUR TEXT (kept your positions) ===
+    table_text = f"STOL RAQAMI: {table}"
+    txt(guest_name.upper(), 3700, size=280, color="#FFFFFF", stroke=6)
+    txt(table_text,         4450, size=200, color="#FFFFFF", stroke=5)  # Gold table number
 
-    # FINAL PERFECT TEXT (no overlap, perfect size)
-    txt("SAVE THE DATE",        100, 100, "#E8C07B", stroke=3)
-    txt("to celebrate",         280,  46, "#FFFFFF")
-    txt("GISELLE'S",            400, 100, "#E8C07B", stroke=2)
-    txt("40TH BIRTHDAY",        510, 100, "#E8C07B", stroke=2)
-    txt("SEP | 12 | 2024",      650,  70, "#F4E4BC")
+    # === FINAL: RESIZE + CONVERT TO RGB + SAVE AS JPG (TELEGRAM WILL ACCEPT 100%) ===
+    os.makedirs("invitations", exist_ok=True)
+    output_path = f"invitations/invite_{uuid.uuid4()}.jpg"
 
-    txt("Dear",                800,  48, "#FFFFFF")
-    txt(guest_name,            880,  60, "#E8C07B", stroke=2)
-    txt(f"YOUR {table_number}",985,  80, "#E8C07B", stroke=3)
+    # Convert to RGB (remove transparency)
+    if bg.mode in ("RGBA", "LA", "P"):
+        bg = bg.convert("RGB")
 
-    txt("7:30 PM 'till midnight", 1100, 35, "#FFFFFF")
-    txt("539 brookside court, holloway", 1150, 35, "#FFFFFF")
+    # Resize to safe Telegram limits (max 5000px height recommended)
+    max_height = 5000
+    if h > max_height:
+        ratio = max_height / h
+        new_size = (int(w * ratio), max_height)
+        bg = bg.resize(new_size, Image.Resampling.LANCZOS)
+        print(f"Resized to {new_size} for Telegram")
 
+    # Save as JPG (small size, fast send, no errors)
+    bg.save(output_path, quality=92, optimize=True, progressive=True)
+    print(f"FINAL INVITATION READY → {output_path}")
 
-    # Save
-    invitations_folder = os.path.join("invitations")
-    if not os.path.exists(invitations_folder):
-        os.makedirs(invitations_folder)
-
-    output = os.path.join(invitations_folder, f"{uuid.uuid4()}.jpg")
-    bg.save(output, quality=98)
-
-    return output
+    return output_path

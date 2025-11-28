@@ -35,7 +35,7 @@ def create_guest_qr(guest, lang: str = 'uz'):
     return path
 
 
-def create_invitation(qr_path: str, guest_name: str, table: int) -> str:
+def create_invitation(qr_path: str, guest_name: str, table: int, persons: int = 0) -> str:
     # Load your huge background
     bg = Image.open("assets/bg.png")
     draw = ImageDraw.Draw(bg)
@@ -73,8 +73,9 @@ def create_invitation(qr_path: str, guest_name: str, table: int) -> str:
             draw.text((x, y), text, font=f, fill=color)
 
     # === YOUR TEXT (kept your positions) ===
+    guest_name = guest_name.upper() if persons == 0 else f"{guest_name.upper()} - {persons}"
     table_text = f"STOL RAQAMI: {table}"
-    txt(guest_name.upper(), 3700, size=280, color="#FFFFFF", stroke=6)
+    txt(guest_name, 3700, size=280, color="#FFFFFF", stroke=6)
     txt(table_text,         4450, size=200, color="#FFFFFF", stroke=5)  # Gold table number
 
     # === FINAL: RESIZE + CONVERT TO RGB + SAVE AS JPG (TELEGRAM WILL ACCEPT 100%) ===

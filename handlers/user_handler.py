@@ -129,7 +129,7 @@ async def save_info(message: Message, state: FSMContext):
     # await message.answer(t("invitation_ready", lang), reply_markup=keyboards.get_main_menu(lang))
 
     qr = fn.create_guest_qr(guest, lang)
-    invitation_path = fn.create_invitation(qr, guest.full_name_uz if lang == "uz" else guest.full_name_ru, guest.table_number)
+    invitation_path = fn.create_invitation(qr, guest.full_name_uz if lang == "uz" else guest.full_name_ru, guest.table_number, guest.persons_count)
     await message.answer_photo(photo=FSInputFile(invitation_path), caption=t("invitation_ready", lang), reply_markup=keyboards.get_main_menu(lang))
     # os.remove(qr)
 
@@ -156,7 +156,7 @@ async def get_invitation(message: Message, state: FSMContext):
         return
 
     qr = fn.create_guest_qr(guest, bot_user.lang)
-    invitation_path = fn.create_invitation(qr, guest.full_name_uz if bot_user.lang == "uz" else guest.full_name_ru, guest.table_number)
+    invitation_path = fn.create_invitation(qr, guest.full_name_uz if bot_user.lang == "uz" else guest.full_name_ru, guest.table_number, guest.persons_count)
     await message.answer_photo(photo=FSInputFile(invitation_path), caption=t("invitation_ready", bot_user.lang), reply_markup=keyboards.get_main_menu(bot_user.lang))
     return
 

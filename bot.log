@@ -1858,3 +1858,37 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: PHOTO
 2025-11-27 23:55:55,262 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
 2025-11-27 23:55:55,262 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8265474622)
 2025-11-27 23:55:55,516 - aiogram.dispatcher - INFO - Polling stopped for bot @banket_directorov_bot id=8265474622 - 'banket directorov 2025'
+2025-11-28 23:22:52,309 - logger - INFO - Starting...
+2025-11-28 23:22:52,310 - aiogram.dispatcher - INFO - Start polling
+2025-11-28 23:22:52,883 - aiogram.dispatcher - INFO - Run polling for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
+2025-11-28 23:22:53,090 - logger - INFO - BotUser with id 7037720962 not found.
+2025-11-28 23:22:53,091 - logger - INFO - BotUser with id 7037720962 not found.
+2025-11-28 23:22:53,679 - aiogram.event - INFO - Update id=83467146 is handled. Duration 648 ms by bot id=7849606366
+2025-11-28 23:22:53,699 - aiogram.event - INFO - Update id=83467147 is handled. Duration 667 ms by bot id=7849606366
+2025-11-28 23:23:02,665 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-28 23:23:02,834 - aiogram.event - INFO - Update id=83467148 is handled. Duration 271 ms by bot id=7849606366
+2025-11-28 23:23:05,165 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-28 23:23:05,358 - aiogram.event - INFO - Update id=83467149 is handled. Duration 301 ms by bot id=7849606366
+2025-11-28 23:23:20,031 - logger - INFO - Guest with reg number Sergey Poluboyartsev  and Margarita Poluboyartseva not found.
+2025-11-28 23:23:20,083 - logger - INFO - Guest with name Sergey Poluboyartsev  and Margarita Poluboyartseva not found.
+2025-11-28 23:23:20,329 - aiogram.event - INFO - Update id=83467150 is handled. Duration 338 ms by bot id=7849606366
+2025-11-28 23:23:32,160 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-28 23:23:32,359 - aiogram.event - INFO - Update id=83467151 is handled. Duration 418 ms by bot id=7849606366
+2025-11-28 23:23:33,055 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-28 23:23:33,273 - aiogram.event - INFO - Update id=83467152 is handled. Duration 322 ms by bot id=7849606366
+2025-11-28 23:23:34,389 - logger - INFO - Guest with reg number Dildoraxon  Razzaqova not found.
+2025-11-28 23:23:34,445 - logger - INFO - Guest with name Dildoraxon  Razzaqova not found.
+2025-11-28 23:23:34,711 - aiogram.event - INFO - Update id=83467153 is handled. Duration 464 ms by bot id=7849606366
+2025-11-28 23:23:37,156 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-28 23:23:37,358 - aiogram.event - INFO - Update id=83467154 is handled. Duration 285 ms by bot id=7849606366
+2025-11-28 23:24:53,734 - logger - INFO - Guest with tg id 6095810791 not found.
+2025-11-28 23:24:53,872 - aiogram.event - INFO - Update id=83467155 is handled. Duration 236 ms by bot id=7849606366
+2025-11-28 23:24:55,067 - logger - INFO - Guest with reg number Dildoraxon Razzaqova not found.
+2025-11-28 23:24:55,304 - aiogram.event - INFO - Update id=83467156 is handled. Duration 390 ms by bot id=7849606366
+2025-11-28 23:24:57,138 - logger - INFO - Guest with reg number Dildoraxon Razzaqova not found.
+2025-11-28 23:25:00,914 - aiogram.event - INFO - Update id=83467157 is handled. Duration 3916 ms by bot id=7849606366
+2025-11-28 23:25:13,830 - aiogram.event - INFO - Update id=83467158 is handled. Duration 2867 ms by bot id=7849606366
+2025-11-28 23:25:40,512 - aiogram.dispatcher - INFO - Polling stopped
+2025-11-28 23:25:40,513 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-11-28 23:25:40,513 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7849606366)
+2025-11-28 23:25:40,772 - aiogram.dispatcher - INFO - Polling stopped for bot @easybot_example_bot id=7849606366 - 'Easybot Example'
